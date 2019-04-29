@@ -7,8 +7,8 @@ core: Find the smallest index to satisfy g(index)
 
 
 def lower_bound(arr, val, l, r):
-    m = l + (r - l) // 2
     while l != r:
+        m = l + (r - l) // 2
         if arr[m] >= val:
             r = m
         else:
@@ -17,8 +17,8 @@ def lower_bound(arr, val, l, r):
 
 
 def upper_bound(arr, val, l, r):
-    m = l + (r - l) // 2
     while l != r:
+        m = l + (r - l) // 2
         if arr[m] > val:
             r = m
         else:
