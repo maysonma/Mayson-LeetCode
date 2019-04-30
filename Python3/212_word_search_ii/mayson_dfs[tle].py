@@ -1,4 +1,3 @@
-from typing import *
 class Solution:
     def findWords(self, board: List[List[str]], words: List[str]) -> List[str]:
         m = len(board)
@@ -28,8 +27,3 @@ class Solution:
                         ans.append(words[k])
                         remain.remove(k)
         return sorted(ans)
-
-s = Solution()
-board = [["a","b"]]
-words = ["ba"]
-print(s.findWords(board, words))
