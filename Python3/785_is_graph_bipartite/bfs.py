@@ -1,26 +1,40 @@
-class Solution:
-    def isBipartite(self, graph: List[List[int]]) -> bool:
+from typing import List
+
+
+class BreadthFirstSearch:
+    def __init__(self):
+        pass
+
+    def driver(self, graph: List[List[int]]):
         n = len(graph)
-        # 0 = uncolored, 1 = red, -1 = blue
-        color = [0] * n
-
-        def bfs(cur_q, c):
-            while cur_q:
-                nxt_q = []
-                for u in cur_q:
-                    for v in graph[u]:
-                        if color[v] == color[u]:
-                            return False
-                        if color[v] == 0:
-                            color[v] = c
-                            nxt_q.append(v)
-                cur_q = nxt_q
-                c = -c
-            return True
-
+        seen = [0] * n
+        self._driver_init()
         for i in range(n):
-            if color[i] == 0:
-                color[i] = 1
-                if not bfs([i], -1):
-                    return False
-        return True
+            if not seen[i]:
+                pass
+
+    def _driver_init(self):
+        pass
+
+    def _driver_cleanup(self):
+        pass
+
+    def bfs(self, graph, s):
+        # Initialization
+        self._init(graph, s)
+
+
+    def _init(self, graph, s):
+        pass
+
+    def _visit(self, v, u):
+        pass
+
+    def _previsit(self, v, u):
+        pass
+
+    def _postvisit(self, u):
+        pass
+
+    def _cleanup(self, graph):
+        pass
