@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def letterCasePermutation(self, S: str) -> List[str]:
         def is_lower_case(char):
