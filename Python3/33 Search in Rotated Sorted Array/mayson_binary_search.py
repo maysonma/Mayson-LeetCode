@@ -1,3 +1,6 @@
+from typing import List
+
+
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
         def bin_search(nums, l, r, target):
