@@ -24,3 +24,24 @@ class Solution:
                 if dp[i - 1][j] or (j >= nums[i] and dp[i - 1][j - nums[i]]):
                     dp[i][j] = True
         return dp[n - 1][s // 2]
+
+
+# Optimized solution
+class Solution:
+    def canPartition(self, nums: List[int]) -> bool:
+        s = sum(nums)
+        if s % 2 == 1:
+            return False
+        s = int(s / 2)
+
+        dp = [False] * (s + 1)
+        if nums[0] <= s:
+            dp[nums[0]] = True
+        dp[0] = True  # Empty set sum to 0
+
+        for i in range(1, len(nums)):
+            for j in reversed(range(1, s + 1)):
+                if not dp[j] and j >= nums[i]:
+                    dp[j] = dp[j - nums[i]]
+
+        return dp[s]
