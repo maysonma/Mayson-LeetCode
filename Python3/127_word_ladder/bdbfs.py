@@ -1,11 +1,14 @@
+from typing import List
+
+
 class Solution:
     def ladderLength(self, beginWord: str, endWord: str, wordList: List[str]) -> int:
         word_set = set(wordList)
         if endWord not in word_set:
             return 0
         word_set.remove(endWord)
-        s1 = set([beginWord])
-        s2 = set([endWord])
+        s1 = {beginWord}
+        s2 = {endWord}
         alphabet = [chr(i) for i in range(ord('a'), ord('z') + 1)]
         n = len(beginWord)
         step = 0
